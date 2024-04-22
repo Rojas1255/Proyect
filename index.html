@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora del Amor</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+        }
+        .container {
+            margin-top: 50px;
+        }
+        h1 {
+            color: #333;
+        }
+        input[type="text"] {
+            padding: 10px;
+            width: 200px;
+            margin: 10px;
+        }
+        button {
+            padding: 10px 20px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+        #result {
+            margin-top: 20px;
+            font-size: 24px;
+            color: #333;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Calculadora del Amor</h1>
+        <input type="text" id="name1" placeholder="Nombre 1">
+        <input type="text" id="name2" placeholder="Nombre 2">
+        <button onclick="calculateLove()">Calcular</button>
+        <div id="result"></div>
+    </div>
+
+    <script>
+        function calculateLove() {
+            var name1 = document.getElementById('name1').value.toLowerCase();
+            var name2 = document.getElementById('name2').value.toLowerCase();
+            var percentage = (name1.length + name2.length) % 101; // Just a simple example calculation
+            document.getElementById('result').innerHTML = '¡El amor entre ' + name1.toUpperCase() + ' y ' + name2.toUpperCase() + ' es del ' + percentage + '%!';
+        }
+    </script>
+</body>
+</html>
