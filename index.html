@@ -50,7 +50,14 @@
         function calculateLove() {
             var name1 = document.getElementById('name1').value.toLowerCase();
             var name2 = document.getElementById('name2').value.toLowerCase();
-            var percentage = (name1.length + name2.length) % 50; // Just a simple example calculation
+            var sum = 0;
+            for (var i = 0; i < name1.length; i++) {
+                sum += name1.charCodeAt(i);
+            }
+            for (var j = 0; j < name2.length; j++) {
+                sum += name2.charCodeAt(j);
+            }
+            var percentage = (sum % 101) + 1; // Porcentaje entre 1 y 100
             document.getElementById('result').innerHTML = '¡El amor entre ' + name1.toUpperCase() + ' y ' + name2.toUpperCase() + ' es del ' + percentage + '%!';
         }
     </script>
